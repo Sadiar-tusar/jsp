@@ -71,4 +71,74 @@ public class EmployeeDao {
         
         return status;
     }
+    
+    public static void deleteEmployee(int id){
+    
+        sql="delete from employee where id=?";
+        try {
+            ps=newUtil.getCon().prepareStatement(sql);
+            ps.setInt(1, id);
+            
+            ps.executeUpdate();
+            
+            ps.close();
+            newUtil.getCon().close();
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(EmployeeDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public static Employee getById(int id){
+    
+        Employee e=null;
+        
+        sql="select * from employee where id=?";
+        
+        try {
+            ps=newUtil.getCon().prepareStatement(sql);
+            
+            ps.setInt(1, id);
+            
+            rs=ps.executeQuery();
+            while(rs.next()){
+            e=new Employee(rs.getInt("id"),
+                    rs.getString("name"),
+                    rs.getString("dejignation"),
+                    rs.getFloat("salary"));
+            }
+            
+            ps.close();
+            rs.close();
+            newUtil.getCon().close();
+        } catch (SQLException ex) {
+            Logger.getLogger(EmployeeDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return e;
+    }
+    
+    public static int updateEmployee(Employee e){
+    
+    int status=0;
+    
+    sql="update employee set name=?, dejignation=?, salary=? where id=?";
+    
+        try {
+            ps=newUtil.getCon().prepareStatement(sql);
+            ps.setString(1, e.getName());
+            ps.setString(2, e.getDejignation());
+            ps.setFloat(3, e.getSalary());
+            ps.setInt(4, e.getId());
+            
+            status=ps.executeUpdate();
+            
+            ps.close();
+            newUtil.getCon().close();
+        } catch (SQLException ex) {
+            Logger.getLogger(EmployeeDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return status;
+    }
 }
