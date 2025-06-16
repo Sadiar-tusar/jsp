@@ -4,7 +4,7 @@
 
 <%
         
-        EmployeeDao.deleteEmployee(e);
+        EmployeeDao.deleteEmployee(e.getId());
         
         response.sendRedirect("index.jsp");
     

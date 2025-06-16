@@ -36,8 +36,8 @@ request.setAttribute("list",list);
                     <td>${e.getDejignation()}</td>
                     <td>${e.getSalary()}</td>
                     <td>
-                        <button type="submit" class="btn btn-primary">Edit</button>
-                        <button type="submit" class="btn btn-warning">Delete</button>
+                        <a href="editemployeeform.jsp?id=${e.id}" class="btn btn-primary">Edit </a>
+                        <a href="deleteemployee.jsp?id=${e.id}" class="btn btn-warning" onclick="return confirm('Are you sure you want delete this employee')">Delete</a>
                     </td>
 
                 </tr>
