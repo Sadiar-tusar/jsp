@@ -3,13 +3,9 @@
 
 <% 
 
-
-Emp e=(Emp) request.getAttribute("emp");
+Emp e = (Emp) request.getAttribute("emp");
 
 %>
-
-
-
 
 <div class="container my-3">
     <div class="bg-success text-center">
@@ -18,11 +14,11 @@ Emp e=(Emp) request.getAttribute("emp");
     <!--    start form-->
     <form action="empServelet"  method="post">
         <input type="hidden" name="action" value="update">
-        <input type="hidden" name="id" value="<%=e.getId()%>"/>
+        <input type="hidden" name="id" value="<%= e.getId()%>"/>
         <div class="row">
             <div class="col-md-6">
                 <label for="exampleInputEmail1" class="form-label">Name</label>
-                <input type="text" class="form-control" id="name" name="name" value="<%=e.getName()%>" placeholder="Full Name">
+                <input type="text" class="form-control" id="name" name="name" value="<%= e.getName()%>" placeholder="Full Name" required>
             </div>
     
         </div>
@@ -30,7 +26,7 @@ Emp e=(Emp) request.getAttribute("emp");
         <div class="row mt-3">
             <div class="col-md-6">
                 <label  class="form-label">Salary</label>
-                <input type="text" class="form-control" id="salary" name="salary" value="<%=e.getSalary()%>">
+                <input type="text" class="form-control" id="salary" name="salary" value="<%= e.getSalary()%>" required>
             </div>
 
         </div>
@@ -42,7 +38,7 @@ Emp e=(Emp) request.getAttribute("emp");
             </div>
 
             <div class="col-md-6">
-                <button type="reset" class="btn btn-danger text-center" >Reset</button>
+                <a href="allemployee.jsp" class="btn btn-danger text-center" >Reset</a>
 
             </div>
         </div>

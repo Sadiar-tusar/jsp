@@ -34,8 +34,8 @@ request.setAttribute("list",list);
                     <td>${e.getName()}</td>
                     <td>${e.getSalary()}</td>
                     <td>
-                        <a href="editemployeeform.jsp?id=${e.id}" class="btn btn-primary">Edit </a>
-                        <a href="deleteemployee.jsp?id=${e.id}" class="btn btn-warning" onclick="return confirm('Are you sure you want delete this employee')">Delete</a>
+                        <a href="empServelet?action=edit&id=${e.id}" class="btn btn-primary">Edit </a>
+                        <a href="empServelet?action=delete&id=${e.id}" class="btn btn-warning" onclick="return confirm('Are you sure you want delete this employee')">Delete</a>
                     </td>
 
                 </tr>
