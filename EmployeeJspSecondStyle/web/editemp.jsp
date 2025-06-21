@@ -14,10 +14,10 @@ Emp e = (Emp) request.getAttribute("emp");
     <!--    start form-->
     <form action="empServelet"  method="post">
         <input type="hidden" name="action" value="update">
-        <input type="hidden" name="id" value="<%= e.getId()%>"/>
+        <input type="hidden" name="id" value="<%= e.getId()%>">
         <div class="row">
             <div class="col-md-6">
-                <label for="exampleInputEmail1" class="form-label">Name</label>
+                <label class="form-label">Name</label>
                 <input type="text" class="form-control" id="name" name="name" value="<%= e.getName()%>" placeholder="Full Name" required>
             </div>
     

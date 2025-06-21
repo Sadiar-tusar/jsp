@@ -87,13 +87,13 @@ public class EmpDao {
     
     public static Emp getById(int id){
     
-        Emp e=null;
+        Emp e = new Emp();
         
         sql="select * from emp where id=?";
         
         try {
             ps=util.getCon().prepareStatement(sql);
-            ps.setInt(id, id);
+            ps.setInt(1, id);
             rs=ps.executeQuery();
             
             while(rs.next()){
