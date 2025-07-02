@@ -31,10 +31,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="hom.jsp">Home</a>
+            <a class="nav-link active" aria-current="page" href="allstudent.jsp">All Student</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="addEmployeeForm.jsp">Add Employee</a>
+            <a class="nav-link" href="addstudent.jsp">Add Student</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
