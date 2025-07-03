@@ -22,6 +22,13 @@ Emp e = (Emp) request.getAttribute("emp");
             </div>
     
         </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label class="form-label">Designation</label>
+                <input type="text" class="form-control" id="designation" name="designation" value="<%= e.getDesignation()%>" placeholder="Full Name" required>
+            </div>
+    
+        </div>
         <!-- start 2nd row-->
         <div class="row mt-3">
             <div class="col-md-6">

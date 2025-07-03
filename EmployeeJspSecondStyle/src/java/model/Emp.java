@@ -6,19 +6,22 @@ public class Emp {
     
     private int id;
     private String name;
+    private String designation;
     private float salary;
 
     public Emp() {
     }
 
-    public Emp(int id, String name, float salary) {
+    public Emp(int id, String name, String designation, float salary) {
         this.id = id;
         this.name = name;
+        this.designation = designation;
         this.salary = salary;
     }
 
-    public Emp(String name, float salary) {
+    public Emp(String name, String designation, float salary) {
         this.name = name;
+        this.designation = designation;
         this.salary = salary;
     }
 
@@ -38,6 +41,14 @@ public class Emp {
         this.name = name;
     }
 
+    public String getDesignation() {
+        return designation;
+    }
+
+    public void setDesignation(String designation) {
+        this.designation = designation;
+    }
+
     public float getSalary() {
         return salary;
     }
@@ -45,6 +56,6 @@ public class Emp {
     public void setSalary(float salary) {
         this.salary = salary;
     }
-    
+
     
 }

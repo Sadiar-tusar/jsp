@@ -15,12 +15,13 @@ request.setAttribute("list",list);
 <div class="container"> 
 
     <h1 class="text-primary text-center">All Employee</h1> 
-    <<table class="table table-striped bg-secondary">
+    <<table class="table table-striped">
 
         <thead> 
             <tr>
                 <th>ID</th>
                 <th>Name</th>
+                <th>Designation</th>
                 <th>Salary</th>
                 <th>Action</th>
             </tr>
@@ -32,6 +33,7 @@ request.setAttribute("list",list);
                 <tr>
                     <td>${e.getId()}</td>
                     <td>${e.getName()}</td>
+                    <td>${e.getDesignation()}</td>
                     <td>${e.getSalary()}</td>
                     <td>
                         <a href="empServelet?action=edit&id=${e.id}" class="btn btn-primary">Edit </a>

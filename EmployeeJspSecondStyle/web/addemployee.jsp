@@ -15,6 +15,13 @@
             </div>
 
         </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label for="exampleInputEmail1" class="form-label">Designation</label>
+                <input type="text" class="form-control" id="designation" name="designation" placeholder="Full Name">
+            </div>
+
+        </div>
         <!-- start 2nd row-->
         <div class="row mt-3">
             <div class="col-md-6">

@@ -22,6 +22,7 @@ public class EmpServelet extends HttpServlet {
             Emp emp = new Emp();
 
             emp.setName(req.getParameter("name"));
+            emp.setDesignation(req.getParameter("designation"));
             emp.setSalary(Float.parseFloat(req.getParameter("salary")));
 
             EmpDao.saveEmp(emp);
@@ -32,6 +33,7 @@ public class EmpServelet extends HttpServlet {
             Emp emp = new Emp();
 
             emp.setName(req.getParameter("name"));
+            emp.setDesignation(req.getParameter("designation"));
             emp.setSalary(Float.parseFloat(req.getParameter("salary")));
             emp.setId(Integer.parseInt(req.getParameter("id")));
 

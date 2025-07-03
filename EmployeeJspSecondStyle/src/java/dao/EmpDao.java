@@ -22,12 +22,13 @@ public class EmpDao {
     public static int saveEmp(Emp e){
     
     int status=0;
-    sql="insert into emp(name, salary) values(?,?)";
+    sql="insert into emp(name,designation,salary) values(?,?,?)";
     
         try {
             ps=util.getCon().prepareStatement(sql);
             ps.setString(1,e.getName());
-            ps.setFloat(2, e.getSalary());
+            ps.setString(2,e.getDesignation());
+            ps.setFloat(3, e.getSalary());
             
             status=ps.executeUpdate();
             
@@ -53,7 +54,7 @@ public class EmpDao {
             
             while(rs.next()){
             
-                Emp e=new Emp(rs.getInt("id"), rs.getString("name"), rs.getFloat("salary"));
+                Emp e=new Emp(rs.getInt("id"), rs.getString("name"),rs.getString("designation"), rs.getFloat("salary"));
                 
                 emp.add(e);
             }
@@ -98,7 +99,7 @@ public class EmpDao {
             
             while(rs.next()){
             
-                e=new Emp(rs.getInt("id"), rs.getString("name"), rs.getFloat("salary"));
+                e=new Emp(rs.getInt("id"), rs.getString("name"),rs.getString("designation"), rs.getFloat("salary"));
                 
                 
             }
@@ -117,14 +118,14 @@ public class EmpDao {
 
         int status = 0;
 
-        sql = "update emp set name=?,salary=? where id=?";
+        sql = "update emp set name=?,designation=?,salary=? where id=?";
 
         try {
             ps = util.getCon().prepareStatement(sql);
             ps.setString(1, e.getName());
-            
-            ps.setFloat(2, e.getSalary());
-            ps.setInt(3, e.getId());
+            ps.setString(2, e.getDesignation());
+            ps.setFloat(3, e.getSalary());
+            ps.setInt(4, e.getId());
 
             status = ps.executeUpdate();
 
